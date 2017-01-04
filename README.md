@@ -1,10 +1,3 @@
-# react-webpack-template
-
-This is a simple template for building React apps. Use this to get started, and if you find yourself needing additional features, see my [webpack-howto](https://github.com/petehunt/webpack-howto).
-
-## How to use this
-
-  * Clone the repo: `git clone https://github.com/petehunt/react-webpack-template my-new-project`
-  * Install the dependencies: `cd my-new-project && npm install`
-  * Start webpack: `npm start`
-  * Add your code to `index.js` and open `index.html`
+Todo List application built using React and Webpack.
+This will implemented using ES5 syntax with a view that when complete I can create
+a new branch and refactor to ES6 syntax
