@@ -4,4 +4,5 @@ browser-bundle.js
 browser-bundle.js.map
 .idea
 .idea/*
-.dist/*
+dist/
+dist/*

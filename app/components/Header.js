@@ -2,16 +2,16 @@
  * Header compt for all pages
  */
 var React = require('react');
-var Menubar = require('./Menubar');
+var MenubarContainer = require('../containers/MenubarContainer');
 
 var Header = React.createClass({
     render: function () {
         return (
             <div className="container">
-                <div className="jumbotron">
+                <div className="jumbotron col-sm-12 text-center">
                     <h1>Reactodo</h1>
                 </div>
-            <Menubar/>
+            <MenubarContainer/>
             </div>
         )
     }
