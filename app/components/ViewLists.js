@@ -1,5 +1,4 @@
 var React = require('react');
-var Layout = require('./Layout');
 
 var ViewLists = React.createClass({
     render : function(){
