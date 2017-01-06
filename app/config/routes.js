@@ -15,6 +15,7 @@ var hashHistory = ReactRouter.hashHistory;
 var HomeContainer = require('../containers/HomeContainer');
 var CreateListContainer = require('../containers/CreateListContainer');
 var ViewListsContainer = require('../containers/ViewListsContainer');
+var EditListContainer = require('../containers/EditListContainer');
 var Layout = require('../components/Layout');
 
 //bind routes to components
@@ -25,6 +26,7 @@ var routes = (
             <Route path='home'       component={HomeContainer} />
             <Route path='createlist' component={CreateListContainer} />
             <Route path='viewlists'  component={ViewListsContainer} />
+            <Route path='editlist/:todoListId'  component={EditListContainer} />
         </Route>
     </Router>
 );

@@ -1,4 +1,6 @@
 var React = require('react');
+var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 
 //<div className="container">
 //    <div className="well col-sm-12 text-left">
@@ -24,10 +26,17 @@ var ViewLists = React.createClass({
                     </thead>
                     <tbody>
                     {this.props.todoLists.map(function(row, i) {
+                        console.log('Foo  - > ' + row);
+                        var path = '/editlist/' + row._id;
                         return (
                             <tr key={i}>
                                 <td>{row.title}</td>
                                 <td>{row.todos.length}</td>
+                                <td>
+                                    <Link to={path}>
+                                        <button type='button' className='btn btn-lg btn-danger'>Edit {row._id}</button>
+                                    </Link>
+                                </td>
                             </tr>
                         );
                     })}

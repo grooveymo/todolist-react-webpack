@@ -12,12 +12,14 @@ function getAllLists() {
     return axios.get(uri + '/api/todolists');
 }
 
+function getTodoList(todoListId) {
+    return axios.get(uri + '/api/todolists/'+todoListId);
+}
 
 var RestUtils = {
 
     createTodoList: createTodoList,
-    getTodoList: function (todoListId) {
-    },
+    getTodoList: getTodoList,
     deleteTodoList: function (todoListId) {
     },
     addTodo: function (todo) {
