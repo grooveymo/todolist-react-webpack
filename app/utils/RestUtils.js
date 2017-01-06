@@ -16,14 +16,18 @@ function getTodoList(todoListId) {
     return axios.get(uri + '/api/todolists/'+todoListId);
 }
 
+function addTodo(todoListId, description){
+    return axios.put(uri + '/api/todolists/' + todoListId + '/add', {description : description});
+}
+
+
 var RestUtils = {
 
     createTodoList: createTodoList,
     getTodoList: getTodoList,
     deleteTodoList: function (todoListId) {
     },
-    addTodo: function (todo) {
-    },
+    addTodo: addTodo,
     removeTodo: function (todoListId, todoId) {
     },
     completeTodo: function (todoId) {

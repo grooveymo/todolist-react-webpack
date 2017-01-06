@@ -6,7 +6,8 @@ var EditListContainer = React.createClass({
     getInitialState : function (){
         return {
             isLoading : true,
-            todoList : {}
+            todoList : {},
+            currentTodo : ''
         }
     },
     componentDidMount : function (){
@@ -23,9 +24,35 @@ var EditListContainer = React.createClass({
                 });
             }.bind(this));
     },
+    handleUpdateTodo : function(e) {
+        this.setState({
+            currentTodo : e.target.value
+        })
+    },
+    handleSubmitTodo : function(e){
+        e.preventDefault();
+        var id = this.state.todoList._id;
+
+        console.log('added to list with id ' + id);
+        console.log('added to list with id ' + this.state.currentTodo );
+
+        this.state.isLoading = true;
+        RestUtils.addTodo(id, this.state.currentTodo)
+            .then(function(response){
+                console.log('3. Added Todo to TodoList => ' + JSON.stringify(response.data));
+                this.setState({
+                    todoList : response.data,
+                    isLoading : false,
+                    currentTodo : ''
+                });
+            }.bind(this));
+
+    },
     render : function(){
         return (
-            <EditList todoList={this.state.todoList} />
+            <EditList todoList={this.state.todoList}
+                      onUpdateTodo={this.handleUpdateTodo}
+                      onSubmitTodo={this.handleSubmitTodo} />
         )
     }
 });
