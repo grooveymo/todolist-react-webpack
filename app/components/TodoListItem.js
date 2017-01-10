@@ -15,7 +15,7 @@ function TodoListItem(props) {
         <div className="container">
 
             <div className="col-sm-4">
-                <div class="checkbox">
+                <div className="checkbox">
                     <label>
                         <input type="checkbox"
                                value={props.isComplete}

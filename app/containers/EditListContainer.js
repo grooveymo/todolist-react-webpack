@@ -10,8 +10,8 @@ var EditListContainer = React.createClass({
             currentTodo : ''
         }
     },
-    componentDidMount : function (){
-        console.log('1. Edit TodoList => ' + JSON.stringify(this.props.routeParams));
+    componentWillMount : function (){
+        console.log('***** 1. Edit TodoList => ' + JSON.stringify(this.props.routeParams));
 
         var id = this.props.routeParams.todoListId;
 
@@ -52,7 +52,8 @@ var EditListContainer = React.createClass({
         return (
             <EditList todoList={this.state.todoList}
                       onUpdateTodo={this.handleUpdateTodo}
-                      onSubmitTodo={this.handleSubmitTodo} />
+                      onSubmitTodo={this.handleSubmitTodo}
+                      isLoading={this.state.isLoading} />
         )
     }
 });

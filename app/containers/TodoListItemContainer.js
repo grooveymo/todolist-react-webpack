@@ -4,14 +4,18 @@ var TodoListItem = require('../components/TodoListItem');
 var TodoListItemContainer = React.createClass({
     getInitialState : function(){
         return {
-            data : []
+            data : this.props.todoList.todos || []
         }
     },
-    handleToggleIsComplete : function(){},
-    handleRemove : function(){},
+    handleToggleIsComplete : function(){
+        console.log('clicked complete button');
+    },
+    handleRemove : function(){
+        console.log('clicked remove button');
+    },
     render : function() {
-
-            {this.props.todoList.todos.map(function(todo, i) {
+            var data = this.props.todoList.todos || [];
+            var todoItems = data.map(function(todo, i) {
                 return (
                     <TodoListItem key={i}
                                   isComplete={todo.isComplete}
@@ -19,13 +23,29 @@ var TodoListItemContainer = React.createClass({
                                   toggleIsComplete={this.handleToggleIsComplete}
                                   onRemove={this.handleRemove}/>
                     );
-                })
-            }
+                }, this);
+
+            return (
+                <div>
+                    {todoItems}
+                </div>
+            );
 
     } //render
 
 });
 
 
-
+/*
+ {this.state.data.map(function(todo, i) {
+ return (
+ <TodoListItem key={i}
+ isComplete={todo.isComplete}
+ description={todo.description}
+ toggleIsComplete={this.handleToggleIsComplete}
+ onRemove={this.handleRemove}/>
+ );
+ })
+ }
+*/
 module.exports = TodoListItemContainer;
