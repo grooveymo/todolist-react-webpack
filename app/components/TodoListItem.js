@@ -21,23 +21,23 @@ function TodoListItem(props) {
                                value={props.isComplete}
                                onChange={props.toggleIsComplete} />
                     </label>
-                    </div>
                 </div>
+            </div>
 
-                <div className="col-sm-4">
+            <div className="col-sm-4">
                     <label>{props.description}</label>
-                </div>
-                <div className="col-sm-4">
+            </div>
+
+            <div className="col-sm-4">
                     <button
                         className="btn btn-block btn-success"
                         type="submit"
                         onClick={props.onRemove}>
                         Remove
                     </button>
-
-                </div>
-            </div>
-            )
+             </div>
+        </div>
+    )
 };
 
 module.exports = TodoListItem;

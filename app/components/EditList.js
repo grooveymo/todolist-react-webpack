@@ -1,6 +1,11 @@
 var React = require('react');
+var TodoListItemContainer = require('../containers/TodoListItemContainer');
+var TodoListItemContainerWrapper = require('../containers/TodoListItemContainerWrapper');
+
 
 function EditList (props) {
+      var child = React.cloneElement(<TodoListItemContainer />, {todoList : props.todoList} );
+
         return (
             <div className="container">
                 <h1 className="alert alert-success">Edit List : <mark> {props.todoList.title}</mark> </h1>
@@ -23,10 +28,23 @@ function EditList (props) {
                     </div>
                 </form>
 
-
+                <div>
+                {child}
+                </div>
 
             </div>
         )
 };
 
 module.exports = EditList;
+
+/*
+*                 {React.cloneElement(<TodoListItemContainer />, {todoList : props.todoList} )}
+ */
+
+/*
+ <TodoListItemContainerWrapper todoList={props.todoList}>
+ <TodoListItemContainer />
+ </TodoListItemContainerWrapper>
+
+*/
