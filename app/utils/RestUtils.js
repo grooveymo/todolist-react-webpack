@@ -20,6 +20,9 @@ function addTodo(todoListId, description){
     return axios.put(uri + '/api/todolists/' + todoListId + '/add', {description : description});
 }
 
+function removeTodo (todoListId, todoId){
+    return axios.delete(uri + '/api/todolists/' + todoListId + '/remove/'+todoId);
+}
 
 var RestUtils = {
 
@@ -28,8 +31,7 @@ var RestUtils = {
     deleteTodoList: function (todoListId) {
     },
     addTodo: addTodo,
-    removeTodo: function (todoListId, todoId) {
-    },
+    removeTodo: removeTodo,
     completeTodo: function (todoId) {
     },
     getAllLists: getAllLists

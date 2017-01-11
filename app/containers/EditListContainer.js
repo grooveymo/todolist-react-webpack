@@ -48,12 +48,24 @@ var EditListContainer = React.createClass({
             }.bind(this));
 
     },
+    handleRemoveTodo : function(listId, todo){
+        console.log('clicked remove button');
+        RestUtils.removeTodo(listId, todo._id)
+            .then(function(response){
+                console.log('2. Delete todo --> TodoList => ' + JSON.stringify(response.data));
+                this.setState({
+                    todoList : response.data,
+                    isLoading : false
+                });
+            }.bind(this));
+    },
     render : function(){
         return (
             <EditList todoList={this.state.todoList}
                       onUpdateTodo={this.handleUpdateTodo}
                       onSubmitTodo={this.handleSubmitTodo}
-                      isLoading={this.state.isLoading} />
+                      isLoading={this.state.isLoading}
+                      onRemoveTodo={this.handleRemoveTodo}/>
         )
     }
 });

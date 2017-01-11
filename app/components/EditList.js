@@ -3,7 +3,8 @@ var TodoListItemContainer = require('../containers/TodoListItemContainer');
 var styles = require('../styles');
 
 function EditList (props) {
-      var child = React.cloneElement(<TodoListItemContainer />, {todoList : props.todoList, isLoading : props.isLoading} );
+      var child = React.cloneElement(<TodoListItemContainer />, {todoList : props.todoList, isLoading : props.isLoading,
+      handleRemoveTodo :props.onRemoveTodo} );
 
         return (
             <div className="container">
