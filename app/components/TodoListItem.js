@@ -30,7 +30,7 @@ function TodoListItem(props) {
 
             <div className="col-sm-4">
                     <button
-                        className="btn btn-block btn-success"
+                        className="btn btn-block btn-danger"
                         type="submit"
                         onClick={props.onRemove}>
                         Remove
