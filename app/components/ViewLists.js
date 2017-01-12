@@ -34,7 +34,7 @@ var ViewLists = React.createClass({
                                 <td>{row.todos.length}</td>
                                 <td>
                                     <Link to={path}>
-                                        <button type='button' className='btn btn-lg btn-danger'>Edit {row._id}</button>
+                                        <button type='button' className='btn btn-lg btn-danger'>Edit</button>
                                     </Link>
                                 </td>
                             </tr>
