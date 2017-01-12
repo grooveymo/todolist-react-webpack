@@ -24,6 +24,10 @@ function removeTodo (todoListId, todoId){
     return axios.delete(uri + '/api/todolists/' + todoListId + '/remove/'+todoId);
 }
 
+function completeTodo (todoListId, todoId){
+    return axios.put(uri + '/api/todolists/' + todoListId + '/complete/'+todoId);
+}
+
 var RestUtils = {
 
     createTodoList: createTodoList,
@@ -32,8 +36,7 @@ var RestUtils = {
     },
     addTodo: addTodo,
     removeTodo: removeTodo,
-    completeTodo: function (todoId) {
-    },
+    completeTodo: completeTodo,
     getAllLists: getAllLists
 };
 

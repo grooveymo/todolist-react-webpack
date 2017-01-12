@@ -59,13 +59,26 @@ var EditListContainer = React.createClass({
                 });
             }.bind(this));
     },
+    handleToggleComplete : function(listId, todo){
+        console.log('clicked complete button');
+        RestUtils.completeTodo(listId, todo._id)
+            .then(function(response){
+                console.log('Toggled complete field for todo --> TodoList => ' + JSON.stringify(response.data));
+                this.setState({
+                    todoList : response.data,
+                    isLoading : false
+                });
+            }.bind(this));
+
+    },
     render : function(){
         return (
             <EditList todoList={this.state.todoList}
                       onUpdateTodo={this.handleUpdateTodo}
                       onSubmitTodo={this.handleSubmitTodo}
                       isLoading={this.state.isLoading}
-                      onRemoveTodo={this.handleRemoveTodo}/>
+                      onRemoveTodo={this.handleRemoveTodo}
+                      onToggleComplete={this.handleToggleComplete}/>
         )
     }
 });

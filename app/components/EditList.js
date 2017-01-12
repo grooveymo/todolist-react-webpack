@@ -4,7 +4,7 @@ var styles = require('../styles');
 
 function EditList (props) {
       var child = React.cloneElement(<TodoListItemContainer />, {todoList : props.todoList, isLoading : props.isLoading,
-      handleRemoveTodo :props.onRemoveTodo} );
+      handleRemoveTodo :props.onRemoveTodo, handleToggleComplete : props.onToggleComplete} );
 
         return (
             <div className="container">
@@ -39,14 +39,3 @@ function EditList (props) {
 };
 
 module.exports = EditList;
-
-/*
-*                 {React.cloneElement(<TodoListItemContainer />, {todoList : props.todoList} )}
- */
-
-/*
- <TodoListItemContainerWrapper todoList={props.todoList}>
- <TodoListItemContainer />
- </TodoListItemContainerWrapper>
-
-*/

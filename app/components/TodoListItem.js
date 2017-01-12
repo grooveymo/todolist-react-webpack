@@ -18,7 +18,7 @@ function TodoListItem(props) {
                 <div className="checkbox">
                     <label>
                         <input type="checkbox"
-                               value={props.isComplete}
+                               checked={props.isComplete}
                                onChange={props.toggleIsComplete} />
                     </label>
                 </div>
