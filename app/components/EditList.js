@@ -13,7 +13,7 @@ function EditList(props) {
     return (
         <div className="container">
             <h1 className="alert alert-success">Edit List :
-                <mark> {props.todoList.title}</mark>
+                <span className="label label-default"> {props.todoList.title}</span>
             </h1>
 
             <form onSubmit={props.onSubmitTodo} className="form-inline">
