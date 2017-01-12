@@ -1,5 +1,6 @@
 var React = require('react');
 var Layout = require('./Layout');
+var PropTypes = React.PropTypes;
 
 function CreateList(props) {
         return (
@@ -28,5 +29,9 @@ function CreateList(props) {
             </div>
         )
 };
+
+CreateList.propTypes = {
+    onSubmitListTitle :PropTypes.func.isRequired
+}
 
 module.exports = CreateList;

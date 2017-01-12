@@ -1,4 +1,5 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 
 function FilterList(props) {
     return (
@@ -25,5 +26,12 @@ function FilterList(props) {
         </div>
     )
 }
+
+FilterList.propTypes = {
+    numActive: PropTypes.number,
+    showAll : PropTypes.func.isRequired,
+    showActive : PropTypes.func.isRequired,
+    showCompleted : PropTypes.func.isRequired
+};
 
 module.exports = FilterList;

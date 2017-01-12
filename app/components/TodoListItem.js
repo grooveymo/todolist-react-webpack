@@ -9,6 +9,7 @@
  * @type {*|exports|module.exports}
  */
 var React = require('react');
+var PropTypes = React.PropTypes;
 
 function TodoListItem(props) {
     return (
@@ -38,6 +39,13 @@ function TodoListItem(props) {
              </div>
         </div>
     )
+};
+
+TodoListItem.propTypes = {
+    isComplete : PropTypes.bool.isRequired,
+    toggleIsComplete : PropTypes.func.isRequired,
+    description : PropTypes.string.isRequired,
+    onRemove : PropTypes.func.isRequired
 };
 
 module.exports = TodoListItem;

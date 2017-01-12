@@ -1,4 +1,6 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
+
 var TodoListItemContainer = require('../containers/TodoListItemContainer');
 var FilterList = require('../components/FilterList');
 var styles = require('../styles');
@@ -46,6 +48,20 @@ function EditList(props) {
             </div>
         </div>
     )
+};
+
+EditList.propTypes = {
+    todoList :PropTypes.object,
+    isLoading : PropTypes.bool.isRequired,
+    onRemoveTodo: PropTypes.func.isRequired,
+    onToggleComplete : PropTypes.func.isRequired,
+    onSubmitTodo : PropTypes.func.isRequired,
+    todo : PropTypes.object,
+    onUpdateTodo : PropTypes.func.isRequired,
+    numActive : PropTypes.number,
+    onShowAll : PropTypes.func.isRequired,
+    onShowActive : PropTypes.func.isRequired,
+    onShowCompleted : PropTypes.func.isRequired
 };
 
 module.exports = EditList;

@@ -2,6 +2,7 @@
  * Holds menu buttons
  */
 var React = require('react');
+var PropTypes = React.PropTypes;
 
 function MenuBar(props) {
     return (
@@ -15,5 +16,10 @@ function MenuBar(props) {
     )
 };
 
+MenuBar.propTypes = {
+    onClickHome : PropTypes.func.isRequired,
+    onClickCreateList : PropTypes.func.isRequired,
+    onClickViewLists : PropTypes.func.isRequired
+};
 
 module.exports = MenuBar;

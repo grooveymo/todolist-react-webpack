@@ -1,16 +1,7 @@
 var React = require('react');
+var PropTypes = React.PropTypes;
 var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
-
-//<div className="container">
-//    <div className="well col-sm-12 text-left">
-//        <h3>View Lists Page</h3>
-//        <p>
-//            This page will allow you to view Lists
-//        </p>
-//
-//    </div>
-//</div>
 
 var ViewLists = React.createClass({
     render : function(){
@@ -46,5 +37,10 @@ var ViewLists = React.createClass({
         )
     }
 });
+
+ViewLists.propTypes = {
+    tableHeaders : PropTypes.arr,
+    todoLists : PropTypes.arr
+};
 
 module.exports = ViewLists;
